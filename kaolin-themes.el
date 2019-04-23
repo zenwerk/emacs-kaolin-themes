@@ -225,12 +225,13 @@ Use kaolin-valley-dark-theme.el as example."
   (require 'kaolin-themes-treemacs))
 
 ;;;###autoload
-(when (and (boundp 'custom-theme-load-path) load-file-name)
+(when (boundp 'custom-theme-load-path)
   (let* ((base (file-name-directory load-file-name))
          (dir (expand-file-name "themes/" base)))
     (add-to-list 'custom-theme-load-path
                  (or (and (file-directory-p dir) dir)
-                     base))))
+                     base))
+    (add-to-list 'custom-theme-load-path base)))
 
 (provide 'kaolin-themes)
 
