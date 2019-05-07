@@ -467,7 +467,7 @@
     (hl         aquamarine3)
     (hl-bg      comment)
     (hl-line    (if kaolin-themes-hl-line-colored capri5 bg2))
-    (hl-indent  gray3)
+    (hl-indent  comment)
     (selection  bg3)
     (pulse      spring-green6)
 
@@ -485,6 +485,7 @@
     (tooltip-hl-bg brown2)
     (tooltip-hl-fg amber3)
 
+    (rb-match hl)
     (rb1 cyan3)
     (rb2 purple4)
     (rb3 spring-green4)
@@ -774,7 +775,7 @@
     ;; Modeline
     (mode-line           (:background line-bg1 :foreground line-fg :bold nil
                                       :box (:line-width 2 :color line-border)))
-    (mode-line-inactive  (:background line-bg1 :foreground line-inactive :bold bold
+    (mode-line-inactive  (:background line-bg1 :foreground line-inactive :bold nil
                                       :box (:line-width 2 :color line-border)))
     (mode-line-buffer-id (:background nil :foreground line-color2 :bold nil))
     (mode-line-highlight (:foreground hl :box nil :bold nil))
@@ -1096,7 +1097,7 @@
 
     ;; Rainbow delimeters
     ;; TODO: light themes
-    (show-paren-match (:background nil :foreground orange1 :bold bold))
+    (show-paren-match (:background bg2 :foreground rb-match :bold bold))
     (show-paren-mismatch (:background red2 :foreground bg2))
 
     (rainbow-delimiters-mismatched-face (:background red2 :foreground err))
@@ -1457,16 +1458,6 @@
     (awesome-tab-unselected (:background bg2 :foreground comment))
     (awesome-tab-selected   (:background bg3 :foreground hl))
     ))
-
-;; Predefined Kaolin variables
-;; (defconst kaolin-common-vars
-;;   '((pos-tip-background-color (face-background 'tooltip))
-;;     (pos-tip-foreground-color (face-foreground 'tooltip))))
-
-;; (custom-theme-set-variables
-;;  'kaolin-valley-dark
-;;  '(pos-tip-background-color (face-foreground 'tooltip)))
-;;  ;; `,@kaolin-common-vars)
 
 (provide 'kaolin-themes-lib)
 
